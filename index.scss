@@ -1,0 +1,490 @@
+//variables y funciones
+@import "./partials/variables.scss";
+
+//media queries
+
+@import "./partials/breakpoints";
+
+//bases
+@import "./partials/base";
+
+//layout
+@import "./partials/layout";
+
+//utilidades
+@import "./partials/utilities";
+
+/* ************ hero section ************* */
+#hero {
+  height: 650px;
+  background: url("/images/mobile/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include lg {
+    background: url("/images/desktop/image-hero.jpg");
+    background-size: 100% 100%;
+  }
+
+  .navbar {
+    padding-top: 2.5rem;
+
+    .logo {
+      height: 25px;
+      width: 150px;
+    }
+
+    .mobileMenu {
+      @include lg {
+        display: none;
+      }
+    }
+
+    /* modal */
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $color-black;
+      z-index: 20;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 600ms ease-in;
+
+      @include lg {
+        position: static;
+        visibility: visible;
+        opacity: unset;
+        background: none;
+      }
+    }
+
+    .show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-header {
+      padding: 40px 25px 20px 25px;
+
+      @include lg {
+        display: none;
+      }
+    }
+
+    .logo {
+      width: 146px;
+      height: 25px;
+
+      @include lg {
+        width: 190px;
+        height: 30px;
+      }
+    }
+
+    .modal-list {
+      position: absolute;
+      top: 217px;
+      width: 100%;
+      padding-left: 26px;
+      flex-direction: column;
+      gap: 21px;
+      font-size: 23px;
+
+      li {
+        @include lg {
+          position: relative;
+          padding-bottom: 1px;
+        }
+        &:hover {
+          &::before {
+            @include lg {
+              position: absolute;
+              content: "";
+              bottom: 0;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 26px;
+              border: 1px solid $color-white;
+            }
+          }
+        }
+      }
+
+      a {
+        position: relative;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $color-white;
+        font-weight: $font-josefin-weight;
+
+        &:hover {
+          color: #bf5fc4;
+          @include lg {
+            color: $color-white;
+          }
+        }
+
+        @include lg {
+          font-size: 15px;
+          font-weight: bold;
+          text-transform: capitalize;
+        }
+      }
+
+      @include lg {
+        position: static;
+        flex-direction: row;
+        list-style: none;
+        justify-content: center;
+        gap: 28px;
+        padding-top: 5px;
+      }
+    }
+
+    @include lg {
+      padding-top: 4rem;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  /* header */
+
+  .header {
+    height: 200px;
+    padding: 1.5rem;
+    margin-top: 160px;
+    border: 2px solid $color-white;
+
+    .title {
+      color: $color-white;
+      text-transform: uppercase;
+      font-weight: $font-josefin-weight;
+      font-size: 40px;
+      line-height: 39px;
+      letter-spacing: 0.1px;
+
+      @include lg {
+        padding-top: 0;
+        font-size: 70px;
+        text-align: left;
+        line-height: 69px;
+        letter-spacing: 1.1px;
+      }
+
+      /* @include sm {
+        padding-top: 30px;
+        text-align: center;
+      }
+
+       */
+    }
+
+    @include lg {
+      max-width: 650px;
+      height: 280px;
+      margin-top: 132px;
+      padding: 2.4rem;
+    }
+  }
+}
+
+/* **** description Section **** */
+
+#description {
+  height: 670px;
+  padding-top: 95px;
+  /* description figure */
+  .desc-figure {
+    width: 100%;
+    height: 226px;
+
+    .description-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /*  @include md {
+      max-width: 780px;
+      margin: 95px auto 0 auto;
+    } */
+
+    @include lg {
+      margin: 65px 0 0 0;
+      max-width: 728px;
+      height: 500px;
+    }
+  }
+
+  .desc-text {
+    padding-top: 46px;
+
+    .desc-text-paragraph {
+      padding-top: 18px;
+      max-width: 260px;
+      font-size: 14px;
+      margin: 0 auto;
+      text-align: center;
+      color: $color-veryDarkGray;
+      line-height: 25px;
+
+      @include sm {
+        /*  padding-top: 46px; */
+        max-width: 600px;
+      }
+
+      @include lg {
+        padding-top: 26px;
+        max-width: 419px;
+        margin: 0 0 0 96px;
+        letter-spacing: 0.2px;
+        text-align: left;
+      }
+    }
+
+    @include lg {
+      position: absolute;
+      right: 10.1%;
+      bottom: -72px;
+      padding: 96px 0px 0 0px;
+      background: $color-white;
+      max-width: 560px;
+      height: 400px;
+    }
+  }
+
+  @include lg {
+    position: relative;
+  }
+}
+
+/* our works section */
+
+#our-creations {
+  .sub-title {
+    padding-top: 49px;
+
+    .btn-see-all {
+      display: none;
+
+      @include lg {
+        display: inline-block;
+        border: 2px solid $color-black;
+        height: 41px;
+        width: 155px;
+        text-transform: uppercase;
+        font-size: 15px;
+        letter-spacing: 3.9px;
+        cursor: pointer;
+      }
+
+      &:hover {
+        background: $color-black;
+        color: $color-white;
+      }
+    }
+
+    @include lg {
+      padding-top: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      letter-spacing: 0.3px;
+    }
+  }
+
+  /* grid area works container */
+  .media-container {
+    padding-top: 78px;
+    gap: 23px;
+
+    @include lg {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+  }
+
+  .card {
+    width: 100%;
+    height: 121px;
+    position: relative;
+
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.4);
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+      }
+    }
+
+    .span-title {
+      position: absolute;
+      top: 44%;
+      left: 21px;
+      display: inline-block;
+      width: 128px;
+      color: $color-white;
+      text-transform: uppercase;
+      font-weight: $font-josefin-weight;
+      font-size: 25px;
+      line-height: 24px;
+      letter-spacing: -0.55px;
+
+      @include lg {
+        top: unset;
+        bottom: 6.5%;
+        left: 39px;
+        width: 165px;
+        font-size: 32px;
+        line-height: 32px;
+        letter-spacing: -0.55px;
+      }
+    }
+
+    @include lg {
+      width: 256px;
+      height: 450px;
+    }
+  }
+
+  .button-container {
+    padding-top: 11px;
+    text-align: center;
+
+    .btn-see-all {
+      width: 157px;
+      height: 40px;
+      text-transform: uppercase;
+      font-size: 15px;
+      letter-spacing: 3.9px;
+      border: 2px solid $color-black;
+      cursor: pointer;
+
+      &:hover {
+        background: $color-black;
+        color: $color-white;
+      }
+
+      @include lg {
+        display: none;
+      }
+    }
+  }
+
+  @include lg {
+    padding-top: 100px;
+  }
+}
+
+/* footer Section */
+
+#footer {
+  background-color: $color-black;
+  height: 470px;
+
+  /* flex area */
+  .flex-area {
+    margin-top: 100px;
+    flex-direction: column;
+
+    @include lg {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 0;
+    }
+  }
+
+  /* flex area 1 */
+
+  .flex-area-1 {
+    text-align: center;
+    padding-top: 51px;
+
+    .logo-footer {
+      margin: 0 auto;
+      width: 145px;
+    }
+
+    .menu-list {
+      text-align: center;
+      padding-top: 32px;
+      list-style: none;
+
+      @include lg {
+        display: flex;
+        padding-top: 25px;
+        gap: 25px;
+      }
+    }
+
+    .footer-list + .footer-list {
+      padding-top: 22px;
+      @include lg {
+        padding-top: 0;
+      }
+    }
+
+    .footer-link {
+      color: $color-white;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    @include lg {
+      text-align: left;
+      padding-top: 41px;
+    }
+  }
+
+  /* flex area 2 */
+
+  .flex-area-2 {
+    .social-media-list {
+      padding-top: 49px;
+      gap: 17px;
+
+      @include lg {
+        justify-content: end;
+        padding-top: 43px;
+        gap: 15px;
+      }
+    }
+
+    .copy-right {
+      text-align: center;
+      color: $color-white;
+      padding: 16px 0 70px 0;
+      font-size: 15px;
+
+      @include lg {
+        text-align: right;
+        padding: 26px 0 70px 0;
+      }
+    }
+  }
+
+  @include lg {
+    height: 160px;
+    margin-top: 145px;
+    overflow: hidden;
+  }
+}

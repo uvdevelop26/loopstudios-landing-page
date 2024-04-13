@@ -1,0 +1,41 @@
+.container {
+  padding: 0 1.4rem;
+  margin: 0 auto;
+  max-width: 1154px;
+}
+
+.reset {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.visible {
+  display: block;
+}
+
+.opacity-1 {
+  opacity: 1;
+}
+
+.sub-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: $font-josefin-weight;
+  font-size: 31px;
+  line-height: 33px;
+  letter-spacing: 0.7px;
+
+  @include lg {
+    font-size: 47px;
+    /*  letter-spacing: 1px; */
+    line-height: 49px;
+  }
+}
+
+.inner-subtitle {
+  display: inline-block;
+  padding-left: 27px;
+  letter-spacing: .7px;
+}
