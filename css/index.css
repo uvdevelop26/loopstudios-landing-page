@@ -220,12 +220,6 @@ body {
   font-size: 40px;
   line-height: 39px;
   letter-spacing: 0.1px;
-  /* @include sm {
-    padding-top: 30px;
-    text-align: center;
-  }
-
-   */
 }
 @media (min-width: 1024px) {
   #hero .header .title {
@@ -254,15 +248,18 @@ body {
 #description .desc-figure {
   width: 100%;
   height: 226px;
-  /*  @include md {
-    max-width: 780px;
-    margin: 95px auto 0 auto;
-  } */
 }
 #description .desc-figure .description-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+@media (min-width: 640px) {
+  #description .desc-figure {
+    height: 386px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
 }
 @media (min-width: 1024px) {
   #description .desc-figure {

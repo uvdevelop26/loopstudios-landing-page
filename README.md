@@ -46,12 +46,12 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [Sass](https://sass-lang.com/) - CSS preprocessor
+- [Sass](https://sass-lang.com/) 
 
 
 ### What I learned
 
-This is my first complete page with SASS, there is a lot to learn yet but in this particular project a learn about mixings
+Mixings are reusable blocks of code that can accept arguments and output CSS rules.
 
 ```CSS SASS
 @mixin md {
@@ -64,7 +64,7 @@ This is my first complete page with SASS, there is a lot to learn yet but in thi
 
 ### Continued development
 
-I want to continue developing with SASS it was a lot of fun and there is a so much to learn yet
+I'll continue to develop with SASS, it was a lot of fun and there is a so much to learn yet
 
 
 ## Author

@@ -176,13 +176,6 @@
         line-height: 69px;
         letter-spacing: 1.1px;
       }
-
-      /* @include sm {
-        padding-top: 30px;
-        text-align: center;
-      }
-
-       */
     }
 
     @include lg {
@@ -210,10 +203,11 @@
       object-fit: cover;
     }
 
-    /*  @include md {
-      max-width: 780px;
-      margin: 95px auto 0 auto;
-    } */
+    @include sm {
+      height: 386px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
 
     @include lg {
       margin: 65px 0 0 0;
